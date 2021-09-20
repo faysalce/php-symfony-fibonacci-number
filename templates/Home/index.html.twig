@@ -9,24 +9,51 @@
 		<div class="col-12 col-sm-4 mt-5">
 
 			<form id="fibonacci-form" style="padding:25px; box-shadow:0 0 15px 4px lightgrey;">
-				<p>
+				<p class="p-4">
 					<img src="https://flix.careers/static/logo.svg" class="img-fluid"/>
 
 				</p>
-                <p class="status">
-
-                </p>
-            
-				<small>
-					Please type a number to get fibonacci
-				</small>
+				<p class="status"></p>
+				<p class="text-center">
+					<small >
+						Please type a number to get fibonacci
+					</small>
+				</p>
 				<div class="form-group">
-					<input type="number" class="form-control" id="numberInput" aria-describedby="numberHelp" required placeholder="Enter number">
+					<input type="number" class="form-control text-center" id="numberInput" aria-describedby="numberHelp" required placeholder="Enter number">
 				</div>
 
-				<button type="button" class="btn btn-primary submitbutton btn-block">Submit</button>
+				<button type="button" style="background-color: #73D701;border-color: #FFAD01;" class="btn btn-primary submit-button btn-block">Submit</button>
 			</form>
 		</div>
 	</div>
 {% endblock %}
+{% block javascripts %}
+	<script type="text/javascript">
+  jQuery(document).ready(function($) {
+    $(".submit-button").click(function() {
+      var fiNumber = $('#numberInput').val();
+      if (fiNumber !== "") {
+        $('#numberInput').prop('disabled', true);
+        $('.submit-button').html('Calculating...');
+        setTimeout(function() {
+          $.ajax({
+            url: "/get-fibonacci-number/" + fiNumber,
+            type: 'GET',
+            success: function(data) {
+              $('#numberInput').prop('disabled', false);
+              $('.submit-button').html('Submit');
+              $('.status').html('<div class="alert alert-info" role="alert"><strong>Fibonacci Number is: <span style="color:red">' + data.fibonacciNumber + '</span></strong> </div>').fadeIn(1500);
 
+            }
+          });
+
+        }, 500);
+
+
+      }
+
+    });
+  });
+</script>
+{% endblock %}
