@@ -4,7 +4,7 @@ namespace App\Service;
 
 use App\Service\Fibonacci;
 
-class FibonacciService implements Fibonacci
+class FibonacciService  implements Fibonacci
 {
 
 	public function getNumber(int $n): int
