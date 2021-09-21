@@ -9,6 +9,10 @@ class FibonacciService  implements Fibonacci
 
 	public function getNumber(int $n): int
 	{
+
+		/**
+		 * Returning less then 1 because  it same value will return 
+		 */
 		if ($n <= 1) {
 			return $n;
 		}
@@ -27,5 +31,4 @@ class FibonacciService  implements Fibonacci
 
 		return intval($fibonacci);
 	}
-	
 }
