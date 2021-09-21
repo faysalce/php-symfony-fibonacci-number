@@ -7,7 +7,7 @@
 - Downlod  [Symfony 5](https://symfony.com/download) version latest stable
 
 
-# Getting started
+# Getting started -- Open terminal and folow steps
 - Clone the repository
 ```
 git clone  https://github.com/faysalce/php-symfony-fibonacci-number.git
