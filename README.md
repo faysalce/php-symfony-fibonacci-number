@@ -12,7 +12,7 @@
 ```
 git clone  https://github.com/faysalce/php-symfony-fibonacci-number.git
 ```
-- Install dependencies (please make sure your machine have php and composer installed)
+- Install dependencies (please make sure your machine have lastest version of php and composer installed)
 ```
 cd php-symfony-fibonacci-number
 composer install
