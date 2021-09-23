@@ -46,10 +46,10 @@ class HomeController extends AbstractController
     {
         // $number numaric check 
         if (!is_numeric($number)) {
-            return new JsonResponse(['status' => '0', 'message' => 'Please put a number'], 400);
+            return new JsonResponse(['status' => false, 'message' => 'Please put a number'], 400);
         }
         $this->fibonacciNumber = $this->fibonacciService->getNumber($number);
 
-        return new JsonResponse(['status' => '1', 'fibonacciNumber' => $this->fibonacciNumber]);
+        return new JsonResponse(['status' => true, 'fibonacciNumber' => $this->fibonacciNumber]);
     }
 }

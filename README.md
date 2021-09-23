@@ -39,3 +39,4 @@ please go to application folder with cd command then
 # Comments
 From home page i use jQuery ajax using Fibonacci REST Endpoint to get data 
 
+I know .env file adding in git not safe 

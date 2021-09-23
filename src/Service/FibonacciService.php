@@ -7,7 +7,7 @@ use App\Service\Fibonacci;
 class FibonacciService  implements Fibonacci
 {
 
-	public function getNumber(int $n): int
+	public function getNumber(int $n) 
 	{
 
 		/**
@@ -24,11 +24,11 @@ class FibonacciService  implements Fibonacci
 			$n2_ = $n2;
 
 			$n2 = $n1;
-			$n1 = ($n1 + $n2_);
+			$n1 = bcadd($n1, $n2_);
 		}
 
-		$fibonacci = $n2 + $n1;
-
-		return intval($fibonacci);
+		$fibonacci = bcadd($n2, $n1);
+		
+		return   $fibonacci;
 	}
 }
