@@ -18,10 +18,10 @@ class HomeController extends AbstractController
     private $fibonacciService;
 
 
-    function __construct()
+    function __construct(FibonacciService $fibonacciService)
     {
         //FibonacciService service assign to $fibonacciService property 
-        $this->fibonacciService = new FibonacciService();
+        $this->fibonacciService = $fibonacciService;
     }
 
     /**
@@ -52,4 +52,6 @@ class HomeController extends AbstractController
 
         return new JsonResponse(['status' => true, 'fibonacciNumber' => $this->fibonacciNumber]);
     }
+   
+
 }
